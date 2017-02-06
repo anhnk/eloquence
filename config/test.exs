@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :eloquence, Eloquence.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("POSTGRES_USERNAME"),
+  password: System.get_env("POSTGRES_PASSWORD"),
   database: "eloquence_test",
-  hostname: "localhost",
+  hostname: System.get_env("POSTGRES_ADDRESS"),
   pool: Ecto.Adapters.SQL.Sandbox
