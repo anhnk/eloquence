@@ -1,0 +1,25 @@
+{
+  "name": "eloquence",
+  "version": "1.0.0",
+  "description": "English learning app",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhnk/eloquence.git"
+  },
+  "author": "Anh Do <dotuanhoanganh@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anhnk/eloquence/issues"
+  },
+  "homepage": "https://github.com/anhnk/eloquence#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
+}
