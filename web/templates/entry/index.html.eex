@@ -1,6 +1,6 @@
 <h2>Listing entries</h2>
 
-<table class="table">
+<table class="ui text container table">
   <thead>
     <tr>
       <th>Body</th>
