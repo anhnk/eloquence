@@ -47,7 +47,7 @@ var config = module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('style', 'css!scss?indentedSyntax&includePaths[]=' + __dirname +  '/node_modules'),
+        loader: ExtractTextPlugin.extract('style', 'css!sass?indentedSyntax&includePaths[]=' + __dirname +  '/node_modules'),
       },
       // {
       //   test: /\.scss$/,
