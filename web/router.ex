@@ -16,8 +16,8 @@ defmodule Eloquence.Router do
   scope "/", Eloquence do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
     resources "/entries", EntryController
+    get "/*path", PageController, :index
   end
 
   # Other scopes may use custom stacks.
