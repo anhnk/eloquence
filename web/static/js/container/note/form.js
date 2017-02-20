@@ -3,17 +3,21 @@ import React from 'react';
 export default React.createClass({
   render: function() {
       return (
-        <div>
-          <h2>STUFF</h2>
-          <p>Mauris sem velit, vehicula eget sodales vitae,
-          rhoncus eget sapien:</p>
-          <ol>
-            <li>Nulla pulvinar diam</li>
-            <li>Facilisis bibendum</li>
-            <li>Vestibulum vulputate</li>
-            <li>Eget erat</li>
-            <li>Id porttitor</li>
-          </ol>
+        <div className="ui grid container">
+          <div className="sixteen wide column">
+            <h2>New entry</h2>
+            <form className='ui form'>
+              <div className='field'>
+                <label>Body</label>
+                <textarea name='body' placeholder='Body'></textarea>
+              </div>
+              <div className='field'>
+                <label>Source</label>
+                <input type='text' name='source' placeholder='Source'/>
+              </div>
+              <button className='ui button' type='submit'>Submit</button>
+            </form>
+          </div>
         </div>
       );
     }
