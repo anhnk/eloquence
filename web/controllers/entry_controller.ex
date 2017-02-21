@@ -26,6 +26,19 @@ defmodule Eloquence.EntryController do
     end
   end
 
+  def api_create(conn, %{"entry" => entry_params}) do
+    changeset = Entry.changeset(%Entry{}, entry_params)
+
+    case Repo.insert(changeset) do
+      {:ok, entry} ->
+        conn
+        |> render("show.json", entry: entry)
+      {:error, changeset} ->
+        conn
+        |> render("error.json", changeset: changeset)
+    end
+  end
+
   def show(conn, %{"id" => id}) do
     entry = Repo.get!(Entry, id)
     render(conn, "show.html", entry: entry)
