@@ -1,5 +1,6 @@
 defmodule Eloquence.Entry do
   use Eloquence.Web, :model
+  @derive {Poison.Encoder, except: [:__meta__]}
 
   schema "entries" do
     field :body, :string

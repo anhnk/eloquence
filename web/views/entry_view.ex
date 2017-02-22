@@ -1,6 +1,10 @@
 defmodule Eloquence.EntryView do
   use Eloquence.Web, :view
 
+  def render("index.json", %{entries: entries}) do
+    %{entries: entries}
+  end
+
   def render("show.json", %{entry: entry}) do
     %{
       id: entry.id,

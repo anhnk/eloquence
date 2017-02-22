@@ -8,6 +8,11 @@ defmodule Eloquence.EntryController do
     render(conn, "index.html", entries: entries)
   end
 
+  def api_index(conn, _params) do
+    entries = Repo.all(Entry)
+    render(conn, "index.json", entries: entries)
+  end
+
   def new(conn, _params) do
     changeset = Entry.changeset(%Entry{})
     render(conn, "new.html", changeset: changeset)

@@ -16,6 +16,7 @@ defmodule Eloquence.Router do
   scope "/api", Eloquence do
     pipe_through :api
 
+    get "/entries", EntryController, :api_index
     post "/entries", EntryController, :api_create
   end
 
