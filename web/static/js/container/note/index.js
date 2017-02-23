@@ -23,7 +23,11 @@ export default class NoteIndex extends Component {
 
   _renderEntries() {
     const entries = this.state.entries;
-    return entries.map(entry => this._renderEntry(entry));
+    if (entries.length === 0) {
+      return (<div className='ui active centered inline loader'></div>);
+    } else {
+      return entries.map(entry => this._renderEntry(entry));
+    }
   }
 
   _renderEntry(entry) {
