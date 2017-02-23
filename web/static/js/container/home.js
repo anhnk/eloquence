@@ -9,7 +9,7 @@ export default React.createClass({
         <div className="sixteen wide column"><button className="ui fluid button">Review vocabulary</button></div>
 
         <div className="sixteen wide column"><Link to="/notes/new"><button className="ui fluid button">Add a note</button></Link></div>
-        <div className="sixteen wide column"><a href="/entries"><button className="ui fluid button">Review notes</button></a></div>
+        <div className="sixteen wide column"><Link to="/notes"><button className="ui fluid button">Review notes</button></Link></div>
       </div>
     );
   }
