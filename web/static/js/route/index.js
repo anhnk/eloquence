@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from '../container/app';
 import Home from '../container/home';
-import NoteForm from '../container/note/form';
-import NoteIndex from '../container/note/index';
+import NoteForm from '../container/entry/form';
+import NoteIndex from '../container/entry/index';
 
 export default function configRoutes() {
   return (
