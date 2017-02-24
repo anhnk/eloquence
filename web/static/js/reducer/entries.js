@@ -6,8 +6,8 @@ const initialState = {
 
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case Constants.ENTRIES_FETCHING:
-      return { ...state, entries: action.payload };
+    case Constants.ENTRIES_FETCHED:
+      return { ...state, items: action.payload };
 
     default:
       return state;

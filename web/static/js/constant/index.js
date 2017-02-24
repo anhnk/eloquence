@@ -1,5 +1,5 @@
 const Constants = {
-  ENTRIES_FETCHING: 'ENTRIES_FETCHING',
+  ENTRIES_FETCHED: 'ENTRIES_FETCHED',
 };
 
 export default Constants;

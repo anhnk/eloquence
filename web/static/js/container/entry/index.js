@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import request from 'superagent';
+import { connect } from 'react-redux';
+import Actions from '../../action/entry';
 
-export default class NoteIndex extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = { entries: [] };
-  }
-
+class NoteIndex extends Component {
   componentDidMount() {
-    request.get('api/entries').end((err, res) => this.setState({ entries: res.body.entries }));
+    this.props.dispatch(Actions.fetchEntries());
   }
 
   render() {
@@ -22,7 +18,8 @@ export default class NoteIndex extends Component {
   }
 
   _renderEntries() {
-    const entries = this.state.entries;
+    const { entries } = this.props;
+
     if (entries.length === 0) {
       return (<div className='ui active centered inline loader'></div>);
     } else {
@@ -38,3 +35,13 @@ export default class NoteIndex extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    entries: state.entries.items,
+  };
+}
+
+const ConnectedNoteIndex = connect(mapStateToProps)(NoteIndex);
+
+export default ConnectedNoteIndex;
