@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { connect } from 'react-redux';
+import Actions from '../../action/entry';
 
-export default class NoteForm extends Component {
+class NoteForm extends Component {
   render() {
     return (
       <div className="ui grid container">
@@ -10,11 +11,11 @@ export default class NoteForm extends Component {
           <form className='ui form' onSubmit={::this._handleSubmit}>
             <div className='field'>
               <label>Body</label>
-              <textarea name='body' placeholder='Body'></textarea>
+              <textarea ref='body' placeholder='Body'></textarea>
             </div>
             <div className='field'>
               <label>Source</label>
-              <input type='text' name='source' placeholder='Source'/>
+              <input type='text' ref='source' placeholder='Source'/>
             </div>
             <button className='ui button' type='submit'>Submit</button>
           </form>
@@ -25,6 +26,16 @@ export default class NoteForm extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    browserHistory.push('/');
+    const { body, source } = this.refs;
+    const data = { body: body.value, source: source.value };
+    this.props.dispatch(Actions.createEntry(data));
   }
 }
+
+const mapStateToProps = (state) => {
+  return {};
+}
+
+const ConnectedNoteForm = connect(mapStateToProps)(NoteForm);
+
+export default ConnectedNoteForm;
