@@ -9,7 +9,7 @@ defmodule Eloquence.EntryController do
   end
 
   def api_index(conn, _params) do
-    entries = Repo.all(Entry)
+    entries = Repo.all(from(e in Entry, order_by: [desc: e.inserted_at]))
     render(conn, "index.json", entries: entries)
   end
 
