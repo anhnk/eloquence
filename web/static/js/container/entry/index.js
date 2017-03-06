@@ -28,9 +28,9 @@ class NoteIndex extends Component {
 
   _renderEntry(entry) {
     return (
-      <p key={entry.id} className='sixteen wide column'>
-        <b>{entry.body}</b> - <i>{entry.source}</i>
-      </p>
+      <div key={entry.id} className='sixteen wide column'>
+        {entry.body} - <i>{entry.source}</i>
+      </div>
     );
   }
 }
