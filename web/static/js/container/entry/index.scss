@@ -1,0 +1,21 @@
+.paginator {
+  list-style-type: none;
+
+  li {
+    display: inline;
+    padding: 10px;
+    border: 1px lightgrey solid;
+  }
+}
+
+.active {
+  background: #337AB7;
+
+  a {
+    color: white;
+  }
+}
+
+.disabled a {
+  color: lightgrey;
+}
